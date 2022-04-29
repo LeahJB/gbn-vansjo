@@ -2,6 +2,8 @@
 
 Data and code for developing, evaluating and benchmarking a Gaussian Bayesian Network (GBN) to forecast summer seasonally-aggregated water quality, applied to Lake Vansjø in southeast Norway.
 
+Code is written in Jupyter notebooks, which use Python kernels for all but two notebooks which require bnlearn, which need R kernels.
+
 Data sources:
 * Precipitation and air temperature were derived from the seNorge 1 km2 gridded data (Lussana et al., 2019), averaged over the whole catchment area of Lake Vansjø
 * Wind speed data were from the met.no monitoring location at Rygge airport, by the southern edge of Lake Vansjø
