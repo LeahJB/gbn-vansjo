@@ -8,7 +8,7 @@ edge [fontname="helvetica"] ;
 1 -> 7 ;
 9 [label="squared_error = 0.04\nsamples = 3\nvalue = 0.335"] ;
 7 -> 9 ;
-10 [label="chla <= 13.194\nsquared_error = 0.019\nsamples = 6\nvalue = 0.266"] ;
+10 [label="chla <= 13.333\nsquared_error = 0.019\nsamples = 6\nvalue = 0.266"] ;
 7 -> 10 ;
 11 [label="squared_error = 0.008\nsamples = 3\nvalue = 0.207"] ;
 10 -> 11 ;

@@ -1,7 +1,7 @@
 digraph Tree {
 node [shape=box, fontname="helvetica"] ;
 edge [fontname="helvetica"] ;
-0 [label="colour_prevSummer <= 34.558\nsquared_error = 271.27\nsamples = 38\nvalue = 40.105"] ;
+0 [label="colour_prevSummer <= 34.558\nsquared_error = 270.785\nsamples = 38\nvalue = 40.091"] ;
 1 [label="colour_prevSummer <= 25.924\nsquared_error = 26.469\nsamples = 18\nvalue = 25.285"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
 7 [label="colour_prevSummer <= 19.429\nsquared_error = 25.706\nsamples = 9\nvalue = 23.478"] ;
@@ -12,22 +12,22 @@ edge [fontname="helvetica"] ;
 7 -> 14 ;
 8 [label="squared_error = 20.699\nsamples = 9\nvalue = 27.092"] ;
 1 -> 8 ;
-2 [label="colour_prevSummer <= 60.969\nsquared_error = 116.058\nsamples = 20\nvalue = 53.442"] ;
+2 [label="colour_prevSummer <= 60.969\nsquared_error = 115.824\nsamples = 20\nvalue = 53.416"] ;
 0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-3 [label="colour_prevSummer <= 49.378\nsquared_error = 93.311\nsamples = 14\nvalue = 49.323"] ;
+3 [label="colour_prevSummer <= 49.378\nsquared_error = 90.156\nsamples = 14\nvalue = 49.228"] ;
 2 -> 3 ;
-9 [label="colour_prevSummer <= 42.28\nsquared_error = 116.022\nsamples = 8\nvalue = 50.938"] ;
+9 [label="colour_prevSummer <= 42.28\nsquared_error = 111.026\nsamples = 8\nvalue = 50.772"] ;
 3 -> 9 ;
 11 [label="squared_error = 39.715\nsamples = 4\nvalue = 46.522"] ;
 9 -> 11 ;
-12 [label="squared_error = 153.327\nsamples = 4\nvalue = 55.354"] ;
+12 [label="squared_error = 146.211\nsamples = 4\nvalue = 55.022"] ;
 9 -> 12 ;
 10 [label="squared_error = 54.908\nsamples = 6\nvalue = 47.169"] ;
 3 -> 10 ;
-4 [label="colour_prevSummer <= 67.209\nsquared_error = 37.179\nsamples = 6\nvalue = 63.053"] ;
+4 [label="colour_prevSummer <= 66.545\nsquared_error = 39.299\nsamples = 6\nvalue = 63.188"] ;
 2 -> 4 ;
-5 [label="squared_error = 25.74\nsamples = 3\nvalue = 67.151"] ;
+5 [label="squared_error = 28.065\nsamples = 3\nvalue = 67.371"] ;
 4 -> 5 ;
-6 [label="squared_error = 15.023\nsamples = 3\nvalue = 58.954"] ;
+6 [label="squared_error = 15.545\nsamples = 3\nvalue = 59.005"] ;
 4 -> 6 ;
 }

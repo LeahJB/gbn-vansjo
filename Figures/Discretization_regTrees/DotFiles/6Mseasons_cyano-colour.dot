@@ -12,7 +12,7 @@ edge [fontname="helvetica"] ;
 3 -> 6 ;
 4 [label="squared_error = 1.4\nsamples = 3\nvalue = 4.528"] ;
 1 -> 4 ;
-2 [label="colour <= 64.857\nsquared_error = 0.952\nsamples = 11\nvalue = 0.811"] ;
+2 [label="colour <= 64.41\nsquared_error = 0.952\nsamples = 11\nvalue = 0.811"] ;
 0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
 7 [label="colour <= 59.254\nsquared_error = 0.247\nsamples = 7\nvalue = 0.562"] ;
 2 -> 7 ;

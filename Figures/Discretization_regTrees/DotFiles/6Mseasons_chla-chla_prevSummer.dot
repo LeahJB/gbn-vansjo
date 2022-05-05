@@ -1,18 +1,18 @@
 digraph Tree {
 node [shape=box, fontname="helvetica"] ;
 edge [fontname="helvetica"] ;
-0 [label="chla_prevSummer <= 16.789\nsquared_error = 31.142\nsamples = 38\nvalue = 15.647"] ;
-1 [label="chla_prevSummer <= 8.421\nsquared_error = 9.111\nsamples = 24\nvalue = 12.137"] ;
+0 [label="chla_prevSummer <= 16.789\nsquared_error = 31.231\nsamples = 38\nvalue = 15.64"] ;
+1 [label="chla_prevSummer <= 8.421\nsquared_error = 9.181\nsamples = 24\nvalue = 12.127"] ;
 0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-3 [label="squared_error = 6.966\nsamples = 3\nvalue = 7.879"] ;
+3 [label="squared_error = 5.73\nsamples = 3\nvalue = 7.705"] ;
 1 -> 3 ;
-4 [label="chla_prevSummer <= 12.646\nsquared_error = 6.458\nsamples = 21\nvalue = 12.745"] ;
+4 [label="chla_prevSummer <= 12.646\nsquared_error = 6.482\nsamples = 21\nvalue = 12.759"] ;
 1 -> 4 ;
-7 [label="chla_prevSummer <= 10.601\nsquared_error = 5.731\nsamples = 10\nvalue = 13.657"] ;
+7 [label="chla_prevSummer <= 10.34\nsquared_error = 5.731\nsamples = 10\nvalue = 13.685"] ;
 4 -> 7 ;
 13 [label="squared_error = 2.65\nsamples = 3\nvalue = 14.56"] ;
 7 -> 13 ;
-14 [label="squared_error = 6.553\nsamples = 7\nvalue = 13.27"] ;
+14 [label="squared_error = 6.582\nsamples = 7\nvalue = 13.31"] ;
 7 -> 14 ;
 8 [label="chla_prevSummer <= 15.984\nsquared_error = 5.675\nsamples = 11\nvalue = 11.916"] ;
 4 -> 8 ;

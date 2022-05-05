@@ -80,7 +80,7 @@ bayes_net_predict <- function(rfile_fpath, sd_fpath, year, chla_prevSummer, colo
     # Thresholds to use in classification
     boundaries_list = list('TP' = 29.5,     # Middle of 'Moderate' class
                            'chla' = 20.0,   # M-P boundary. WFD boundaries: [10.5, 20.0]. Only 6 observed points under 10.5 so merge G & M
-                           'colour' = 48.0, # 66th percentile (i.e. upper tercile). No management implications
+                           'colour' = 47.3, # 66th percentile (i.e. upper tercile). No management implications
                            'cyano' = 1.0    # M-P boundary is 2.0, but there were only 2 values in this class. Plenty above 2 tho
                            )
 
@@ -209,7 +209,7 @@ bayes_net_predict_nomet <- function(rfile_fpath, sd_fpath,
     # Thresholds to use in classification
     boundaries_list = list('TP' = 29.5,     # Middle of 'Moderate' class
                            'chla' = 20.0,   # M-P boundary. WFD boundaries: [10.5, 20.0]. Only 6 observed points under 10.5 so merge G & M
-                           'colour' = 48.0, # 66th percentile (i.e. upper tercile). No management implications
+                           'colour' = 47.3, # 66th percentile (i.e. upper tercile). No management implications
                            'cyano' = 1.0    # M-P boundary is 2.0, but there were only 2 values in this class. Plenty above 2 tho
                            )
 
@@ -338,7 +338,7 @@ bayes_net_predict_operational <- function(rfile_fpath,
 
     # Thresholds to use in classification
     boundaries_list = list('TP' = 29.5,     # Middle of 'Moderate' class
-                           'colour' = 48.0, # 66th percentile (i.e. upper tercile). No management implications
+                           'colour' = 47.3, # 66th percentile (i.e. upper tercile). No management implications
                            'cyano' = 1.0    # M-P boundary is 2.0, but there were only 2 values in this class. Plenty above 2 tho
                            )
 

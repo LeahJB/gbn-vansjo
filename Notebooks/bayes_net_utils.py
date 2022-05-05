@@ -180,31 +180,26 @@ def classification_error(obs, pred):
     return classification_error
 
 
-def daily_to_summer_season(daily_df):
+def daily_to_summer_season(daily_df, agg_method_dict, replace_zero_with_NaN_li=[],
+                           return_just_summer=True):
     """
     Take a dataframe with daily frequency data, and aggregate it to seasonal
     (6 monthly), just picking results for the summer (May-Oct) season.
-    Input: dataframe of daily data. Column names should match those defined in
-    agg_method_dict.keys() (rain, colour, TP, chla, wind_speed, cyano).
-    Any extras need adding to the dictionary.
-    
-    Needs tidying (e.g. agg_method_dict should be an input)
+    Input:
+    - dataframe of daily data
+    - dictionary of aggregation method functions
+      (e.g. np.nansum, with a key for each column in daily_df)
+      - replace_zero_with_NaN_list: list of column names to replace zeros with NaNs
+    - return_just_summer (default True): return seasonally-aggregated data just for
+      the 6 month growing season ('summer'), or also for the winter 6 months?
 
     Returns: dataframe of seasonally-aggregated data
     """
-    import numpy as np
     import pandas as pd
+    import numpy as np
 
     # Turn off "Setting with copy" warning, which is returning a false positive
     pd.options.mode.chained_assignment = None  # default='warn'
-
-    agg_method_dict = {'rain': np.nansum,
-                       'colour': np.nanmean,
-                       'TP': np.nanmean,
-                       'chla': np.nanmean,
-                       'chl-a': np.nanmean,
-                       'wind_speed': np.nanmean,
-                       'cyano': np.nanmax}
 
     # Drop any dictionary keys that aren't needed
     for key in list(agg_method_dict.keys()):
@@ -219,11 +214,16 @@ def daily_to_summer_season(daily_df):
     # (corresponding to the label) is omitted. Checked manually and right.
     season_df = daily_df.shift(periods=-1).resample('2Q-Apr', closed='left').agg(agg_method_dict)
 
+    # np.nansum isn't working as I expected, with sums of 0 when all values
+    # are NaN. Replace these with NaNs.
+    for col in replace_zero_with_NaN_li:
+        season_df.loc[season_df[col] == 0.0, col] = np.NaN
+
     # Remove frequncy info from index so plotting works right
     season_df.index.freq = None
 
-    # Remove winter rows (a bit long-winded, but works)
-
+    # Add season info to the dataframe, i.e. a column with either "summer"
+    # or "winter"
     def season(x):
         """Input month number, and return the season it corresponds to
         """
@@ -233,14 +233,20 @@ def daily_to_summer_season(daily_df):
             return 'summ'
 
     season_df['Season'] = season_df.index.month.map(season)
-    summer_df = season_df.loc[season_df['Season'] == 'summ']
-    summer_df.drop('Season', axis=1, inplace=True)
 
-    # Reindex
-    summer_df['year'] = summer_df.index.year
-    summer_df.set_index('year', inplace=True)
+    if return_just_summer is True:
+        # Remove winter rows (a bit long-winded, but works)
+        summer_df = season_df.loc[season_df['Season'] == 'summ']
+        summer_df.drop('Season', axis=1, inplace=True)
 
-    return summer_df
+        # Reindex
+        summer_df['year'] = summer_df.index.year
+        summer_df.set_index('year', inplace=True)
+
+        return summer_df
+
+    else:
+        return season_df
 
 
 def discretize(thresholds, value):
